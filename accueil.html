@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambassade d'Arabie Saoudite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #004d00;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .left-section {
+            display: flex;
+            align-items: center;
+        }
+        .header .left-section i {
+            margin-right: 10px;
+        }
+        .header .right-section {
+            display: flex;
+            align-items: center;
+        }
+        .header .right-section .contact-button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px; /* Réduit la largeur du bouton */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .header .right-section .user-icon {
+            margin-right: 10px;
+        }
+        .nav {
+            background-color: #004d00;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .nav a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h1 {
+            font-size: 36px;
+            margin: 20px 0;
+        }
+        .content h2 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .progress-bar {
+            width: 80%;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 20px auto;
+            height: 20px;
+            position: relative;
+        }
+        .progress-bar .progress {
+            width: 5%;
+            background-color: #4caf50;
+            height: 100%;
+            border-radius: 5px;
+        }
+        .warning {
+            background-color: #00bcd4;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 20px auto;
+            width: 80%;
+            text-align: left;
+            position: relative;
+        }
+        .warning i {
+            margin-right: 10px;
+        }
+        .form-section {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            width: 80%;
+            max-width: 600px; /* Limite la largeur maximale du formulaire */
+            margin: 20px auto; /* Centre le formulaire horizontalement */
+        }
+        .form-section label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="date"],
+        .form-section select {
+            width: 100%; /* Changez cette valeur pour ajuster la largeur */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-section .gender {
+            margin: 10px 0;
+        }
+        .form-section .gender label {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .next-button {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px; /* Réduit la largeur du bouton */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            max-width: 60px; /* Limite la largeur du bouton */
+        }
+    
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="left-section">
+                <i class="fas fa-search"></i>
+                <span>+1 555-555-5556</span>
+            </div>
+            <div class="right-section">
+                <i class="fas fa-user user-icon"></i>
+                <button class="contact-button">Contact</button>
+            </div>
+        </div>
+        <div class="nav">
+            <a href="#" onclick="showPage('page_accueil')">Page d'accueil</a>
+            <a href="#" onclick="showPage('page1')">Page 1</a>
+            <a href="#" onclick="showPage('page2')">Page 2</a>
+            <a href="#" onclick="showPage('page3')">Page 3</a>
+            <a href="#" onclick="showPage('page4')">Page 4</a>
+        </div>
+        <fieldset class="page" id="page_accueil">
+            <div class="content">
+                <h1>سفارة المملكة العربية السعودية</h1>
+                <h2>Ambassade d'Arabie Saoudite</h2>
+                <h3>Informations personnelles</h3>
+                <p>Nous avons presque terminé !</p>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="warning">
+                    <i class="fas fa-info-circle"></i>
+                    <strong>AVERTISSEMENT</strong>
+                    <p>Si vous ne suivez pas le format requis pour chaque champ, votre demande sera automatiquement rejetée.</p>
+                </div>
+            </div>
+            <div class="form-section">
+                <h3>Formulaire d'inscription</h3>
+                <form onsubmit="event.preventDefault(); showPage('page1');">
+                    <label for="full-name">Nom complet :</label>
+                    <input type="text" id="full-name" name="full-name" required>
+
+                    <label for="mothers-name">Nom de la mère :</label>
+                    <input type="text" id="mothers-name" name="mothers-name" required>
+
+                    <label for="dob">Date de naissance :</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="place-of-birth">Lieu de naissance :</label>
+                    <input type="text" id="place-of-birth" name="place-of-birth" required>
+
+                    <label for="current-nationality">Nationalité actuelle :</label>
+                    <select id="current-nationality" name="current-nationality" required>
+                        <option value="">Sélectionnez votre nationalité</option>
+                        <option value="saudi">Saoudienne</option>
+                        <option value="french">Française</option>
+                        <option value="other">Autre</option>
+                    </select>
+
+                    <label for="previous-nationality">Nationalité précédente :</label>
+                    <select id="previous-nationality" name="previous-nationality">
+                        <option value="">Sélectionnez votre nationalité précédente</option>
+                        <option value="none">Aucune</option>
+                        <option value="saudi">Saoudienne</option>
+                        <option value="french">Française</option>
+                        <option value="other">Autre</option>
+                    </select>
+
+                    <label>Sexe :</label>
+                    <div class="gender">
+                        <label>
+                            <input type="radio" name="gender" value="male" required> Homme
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female" required> Femme
+                        </label>
+                    </div>
+
+                    <button type="submit" class="next-button">Suivant</button>
+                </form>
+            </div>
+        </fieldset>
+
+        <fieldset class="page" id="page1" style="display:none;">
+            <div class="content">
+                <h2>Informations Professionnelles</h2>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="form-section">
+                <form onsubmit="event.preventDefault(); showPage('page2');">
+                    <label for="sect">Secte :</label>
+                    <input type="text" id="sect" name="sect" placeholder="Entrez votre secte" required>
+
+                    <label for="religion">Religion :</label>
+                    <input type="text" id="religion" name="religion" placeholder="Entrez votre religion" required>
+
+                    <label for="place_of_issue">Lieu de délivrance :</label>
+                    <input type="text" id="place_of_issue" name="place_of_issue" placeholder="Entrez le lieu de délivrance" required>
+
+                    <label for="qualification">Qualification :</label>
+                    <input type="text" id="qualification" name="qualification" placeholder="Entrez votre qualification" required>
+
+                    <label for="profession">Profession :</label>
+                    <input type="text" id="profession" name="profession" placeholder="Entrez votre profession" required>
+
+                    <label for="home_address">Adresse résidentielle :</label>
+                    <input type="text" id="home_address" name="home_address" placeholder="Entrez votre adresse" required>
+
+                    <label for="phone_number">Numéro de téléphone :</label>
+                    <input type="text" id="phone_number" name="phone_number" placeholder="Entrez votre numéro de téléphone" required>
+
+                    <button class="next-button" type="submit">Suivant</button>
+                </form>
+            </div>
+        </fieldset>
+
+        <fieldset class="page" id="page2" style="display:none;">
+            <div class="content">
+                <h2>Informations sur le Passeport</h2>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="form-section">
+                <form onsubmit="event.preventDefault(); showPage('page3');">
+                    <label>But du voyage :</label>
+                    <div class="gender">
+                        <label>
+                            <input type="radio" name="purpose" value="work" required> Travail
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="transit" required> Transit
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="visit" required> Visite
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="umrah" required> Umrah
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="residence" required> Résidence
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="hajj" required> Hajj
+                        </label>
+                        <label>
+                            <input type="radio" name="purpose" value="diplomacy" required> Diplomatie
+                        </label>
+                    </div>
+
+                    <label for="passport-no">Numéro de passeport :</label>
+                    <input type="text" id="passport-no" name="passport-no" placeholder="ex: a12345678" required>
+
+                    <label for="place-of-issue">Lieu de délivrance :</label>
+                    <input type="text" id="place-of-issue" name="place-of-issue" placeholder="ex: Algérie" required>
+
+                    <label for="date-issued">Date de délivrance du passeport :</label>
+                    <input type="date" id="date-issued" name="date-issued" required>
+
+                    <label for="date-expiry">Date d'expiration du passeport :</label>
+                    <input type="date" id="date-expiry" name="date-expiry" required>
+
+                    <label for="duration-stay">Durée de séjour dans le royaume (en jours) :</label>
+                    <input type="text" id="duration-stay" name="duration-stay" required>
+
+                    <label for="date-departure">Date de départ :</label>
+                    <input type="date" id="date-departure" name="date-departure" required>
+
+                    <label for="date-arrival">Date d'arrivée :</label>
+                    <input type="date" id="date-arrival" name="date-arrival" required>
+
+                    <button class="next-button" type="submit">Suivant</button>
+                </form>
+            </div>
+        </fieldset>
+        <fieldset class="page" id="page3" style="display:none;">
+            <div class="content">
+                <h2>Informations de Paiement</h2>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="form-section">
+                    <form id="payment-form" onsubmit="return handlePaymentFormSubmit();">
+                        <label>Type de Paiement *</label>
+                        <select id="payment-type" onchange="togglePaymentFields()" required>
+                            <option value="">Sélectionnez un type de paiement</option>
+                            <option value="fee">Frais</option>
+                            <option value="cash">Espèces</option>
+                            <option value="cheque">Chèque</option>
+                            <option value="option4">Option 4</option>
+                        </select>
+        
+                        <div id="cheque-fields" class="conditional-fields" style="display:none;">
+                            <label>Numéro de Chèque *</label>
+                            <input type="text" name="cheque-number" required>
+                            <label>Date de Chèque *</label>
+                            <input type="date" name="cheque-date" required>
+                        </div>
+        
+                        <div id="option4-fields" class="conditional-fields" style="display:none;">
+                            <label>Numéro Option 4 *</label>
+                            <input type="text" name="option4-number" required>
+                            <label>Date Option 4 *</label>
+                            <input type="date" name="option4-date" required>
+                        </div>
+        
+                        <label>J'ai un mahram</label>
+                        <input type="checkbox" name="mahram" id="mahram-checkbox" onclick="toggleMahramInfo()">
+                        <label for="mahram-checkbox">Cochez cette case si vous avez un mahram</label>
+        
+                        <div id="mahram-info" class="conditional-fields" style="display:none;">
+                            <label>Nom du Mahram *</label>
+                            <input type="text" name="mahram-name" required>
+                            <label>Relation *</label>
+                            <select name="mahram-relationship" required>
+                                <option value="">Sélectionnez une relation</option>
+                                <option value="father">Père</option>
+                                <option value="brother">Frère</option>
+                                <option value="husband">Mari</option>
+                                <option value="son">Fils</option>
+                                <option value="uncle">Oncle</option>
+                                <option value="other">Autre</option>
+                            </select>
+                        </div>
+        
+                        <label>Nom du Transporteur *</label>
+                        <input type="text" name="carrier-name" required>
+                        <label>Destination *</label>
+                        <input type="text" name="destination" required>
+        
+                        <button class="next-button" type="submit">Suivant</button>
+                    </form>
+                </div>
+            </div>
+        </fieldset>
+        
+
+        <fieldset class="page" id="page4" style="display:none;">
+            <div class="content">
+                <h2>Informations sur le Voyage dans le Même Passeport</h2>
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            
+            <div class="form-section">
+                <form onsubmit="event.preventDefault();">
+                    <label>Voyage dans le Même Passeport *</label>
+                    <select id="traveling-selection" onchange="updatePersonFields()">
+                        <option value="0">Non</option>
+                        <option value="1">1 Personne</option>
+                        <option value="2">2 Personnes</option>
+                        <option value="3">3 Personnes</option>
+                        <option value="4">4 Personnes</option>
+                    </select>
+
+                    <div id="person-info-container"></div>
+
+                    <button class="next-button" type="submit">Suivant</button>
+                </form>
+            </div>
+        </fieldset>
+        
+
+        <script>
+            function showPage(pageId) {
+                const pages = document.querySelectorAll('fieldset.page');
+                pages.forEach(page => {
+                    page.style.display = 'none'; // Masquer toutes les pages
+                });
+                document.getElementById(pageId).style.display = 'block'; // Afficher la page demandée
+            }
+
+            function handlePaymentFormSubmit() {
+    const form = document.getElementById('payment-form');
+    if (form.checkValidity()) {
+        showPage('page4'); // Redirige vers la page 4
+        return false; // Empêche la soumission du formulaire
+    } else {
+        form.reportValidity(); // Affiche les messages de validation
+        return false; // Empêche la soumission du formulaire
+    }
+}
+
+    function togglePaymentFields() {
+        const paymentType = document.getElementById('payment-type').value;
+        document.getElementById('cheque-fields').style.display = paymentType === 'cheque' ? 'block' : 'none';
+        document.getElementById('option4-fields').style.display = paymentType === 'option4' ? 'block' : 'none';
+    }
+
+    function toggleMahramInfo() {
+        const mahramCheckbox = document.getElementById('mahram-checkbox');
+        document.getElementById('mahram-info').style.display = mahramCheckbox.checked ? 'block' : 'none';
+    }
+
+            function updatePersonFields() {
+                const selection = document.getElementById('traveling-selection').value;
+                const container = document.getElementById('person-info-container');
+                container.innerHTML = ''; // Clear previous fields
+
+                for (let i = 1; i <= selection; i++) {
+ container.innerHTML += `
+                        <h3>Informations pour la Personne ${i}</h3>
+                        <label for="person${i}-name">Nom :</label>
+                        <input type="text" id="person${i}-name" name="person${i}-name" required>
+
+                        <label for="person${i}-passport-no">Numéro de passeport :</label>
+                        <input type="text" id="person${i}-passport-no" name="person${i}-passport-no" required>
+                    `;
+                }
+            }
+        </script>
+    </body>
+</html>
