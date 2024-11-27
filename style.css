@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+.header {
+    background-color: #004d00;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .left-section i {
+    margin-right: 10px;
+}
+.header .right-section .contact-button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nav {
+    background-color: #004d00;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+/* Ajoutez les autres styles ici */
